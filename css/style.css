@@ -1,5 +1,9 @@
 :root{
-    
+--background-header: #ffffff;
+--background-menu: #ffffff;
+--background-content: #f9f9f9;
+--icon-color: #606060;
+--text-primary: #030303;
 }
 
 *{
@@ -11,3 +15,215 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
+/* QUANDO MUDAR O TEMA PARA ESCURO */
+body.dark{
+    --background-header: #202020;
+    --background-menu: #212121;
+    --background-content: #181818;
+}
+
+#raiz{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* HEADER */
+header{
+    height: 56px;
+    width: 100%;
+    background-color: var(--background-header);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 16px;
+    justify-content: space-between;
+}
+
+header .material-icons{
+    color: var(--icon-color);
+}
+
+header .logo{
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+}
+
+header .btn{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+header .logo .icon{
+    width: 100px;
+    height: 24px;
+}
+
+header .search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+/* BARRA DE PESQUISA */
+header .search .bar{
+    display: flex;
+
+    width: 640px;
+    height: 30px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+}
+
+header .search .bar .keyboard{
+    font-size: 22px;
+    line-height: 30px;
+    margin-right: 8px;
+}
+
+header .search .bar button{
+    width: 65px;
+    border: none;
+    border-left: 1px solid #ccc;
+}
+
+header .search .bar button .material-icons{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+header .search .bar input{
+    flex: 1;
+    height: 100%;
+    border: none;
+    padding: 0 8px;
+}
+
+/*ICONE DE SINO E DEMAIS */
+header .actions{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+header .actions .avatar{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+/*MENU DE UM LADO E LISTAGEM DO OUTRO */
+#main-section{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+/* MENU LATERAL */
+aside{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: calc(100vh - 56px);
+    background-color: var(--background-menu);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 0;
+}
+
+aside::-webkit-scrollbar{
+   display: none;
+}
+
+/* CADA ITEM DO MENU LATERAL */
+aside .menu-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 0 24px;
+    /*Menu esticando*/
+    flex-shrink: 0;
+}
+
+aside .menu-item:hover{
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+aside .menu-item.selected{
+    background-color: #e0e0e0;
+}
+
+aside .menu-item.selected .material-icons{
+    color: #f82000;
+}
+
+aside .menu-item.selected .label{
+    font-weight: 400;
+}
+
+aside .menu-item .material-icons{
+    margin-right: 24px;
+    font-size: 24px;
+    color: var(--icon-color);
+}
+
+aside .menu-item .label{
+    white-space: nowrap;
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 400;
+    height: 100%;
+    line-height: 40px;
+}
+
+/*LINHA SEPARANDO */
+aside .divider{
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 12px 0;
+    flex-shrink: 0;
+}
+
+/*SEÇÃO MAIS DO YOUTUBE */
+aside .section-title{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--icon-color);
+    margin-left: 24px;
+    margin-bottom: 12px;
+}
+
+/*SEÇÃO DE INSCRIÇÕES */
+aside .menu-item img{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 24px;
+}
+
+
+
+/* LISTA DOS VIDEOS */
+main{
+    flex: 1;
+    background-color: var(--background-content);
+    overflow: auto;
+}
+
